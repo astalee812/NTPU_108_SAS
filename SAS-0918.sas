@@ -82,5 +82,30 @@ input  FTP UEMP MAN LIC GR CLEAR WM NMAN GOV HE WE HOM ACC ASR @@;
 run;
 proc print; run;
 
+/*給資料一個名稱*/
+data ch1d6;
+infile "C:\Users\ASUS\Desktop\NTPU\108-1-統計套裝軟體\statpack104fch1d6.txt" firstobs=40; 
+input  FTP UEMP MAN LIC GR CLEAR WM NMAN GOV HE WE HOM ACC ASR @@;
+label FTP="aaa";
+run;
+proc print data=ch1d6 label; run;
+
+/*給資料很多個名稱*/
+data ch1d6;
+infile "C:\Users\ASUS\Desktop\NTPU\108-1-統計套裝軟體\statpack104fch1d6.txt" firstobs=40; 
+input  FTP UEMP MAN LIC GR CLEAR WM NMAN GOV HE WE HOM ACC ASR @@;
+label FTP="aaa";
+run;
+proc print data=ch1d6 label;
+label acc='bbb';
+run;
+
+/*換資料名稱, rename*/
+data ch1d6;
+infile "C:\Users\ASUS\Desktop\NTPU\108-1-統計套裝軟體\statpack104fch1d6.txt" firstobs=40; 
+input  FTP UEMP MAN LIC GR CLEAR WM NMAN GOV HE WE HOM ACC ASR @@;
+format he dollar. wm comma8.;
+run;
+
 
 
